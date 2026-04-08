@@ -98,6 +98,5 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status)
     else
     {
         s_last_mode    = input->mode;
-        status->active_mode = input->mode;
     }
 }
