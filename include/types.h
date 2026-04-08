@@ -20,6 +20,28 @@ typedef struct
     Mode    mode;         
 } VehicleInput;
 
+typedef enum
+{
+    NORMAL   = 0,
+    DEGRADED = 1,
+    SAFE     = 2
+} SystemState;
+
+typedef struct
+{
+    SystemState system_state;
+    Mode        active_mode;
+    Mode        previous_mode;
+} VehicleStatus;
+
+typedef struct
+{
+    uint8_t major_fault_count;
+    uint8_t warning_count;
+    uint8_t critical_fault_count;
+    uint8_t reset_requested;
+} FaultStatus;
+
 #endif 
 /* Add to types.h */
 typedef enum {

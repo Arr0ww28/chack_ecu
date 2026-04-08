@@ -1,5 +1,5 @@
 #include "input.h"
-#include "../include/types.h"
+#include "types.h"
 
 #include <stdio.h>
 
@@ -98,7 +98,5 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status)
     else
     {
         s_last_mode    = input->mode;
-        
-        
     }
 }
