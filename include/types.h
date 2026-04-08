@@ -22,9 +22,9 @@ typedef struct
 
 typedef enum
 {
-    SAFE_STATE_NORMAL   = 0,
-    SAFE_STATE_DEGRADED = 1,
-    SAFE_STATE_SAFE     = 2
+    NORMAL   = 0,
+    DEGRADED = 1,
+    SAFE     = 2
 } SystemState;
 
 typedef struct
