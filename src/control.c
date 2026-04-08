@@ -1,4 +1,5 @@
-#include "control.h"
+#include "../include/control.h"
+#include "../include/types.h"
 #include <stddef.h>
 #include <stdio.h>
 
