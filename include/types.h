@@ -6,9 +6,9 @@
 typedef enum
 {
     MODE_OFF     = 0,
-    MODE_NORMAL  = 1,
-    MODE_SPORT   = 2,
-    MODE_ECO     = 3,
+    MODE_ACC  = 1,
+    MODE_IGNITION_ON   = 2,
+    MODE_FAULT     = 3,
     MODE_INVALID = 4   
 } Mode;
 
