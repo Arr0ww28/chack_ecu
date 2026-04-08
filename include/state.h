@@ -1,6 +1,6 @@
 #ifndef STATE_H
 #define STATE_H
-#include <stdio.h>
+
 #include "types.h"
 
 //Thresholds that drive state transitions
@@ -8,16 +8,16 @@
 #define STATE_WARNING_REPEAT_THRESHOLD (3U)
 #define STATE_CRITICAL_FAULT_THRESHOLD (2U)
 
-//Initialise the state manager; set system state to NORMAL
-void state_init(void);
+//Initialise all system modules; seed status and faults with safe defaults
+void init_system(VehicleStatus *status, FaultStatus *faults);
 
-//Evaluate fault context and update system safe-state; log every transition
-void evaluate_system_state(const FaultContext *ctx);
+//Evaluate fault counts in faults and update system_state in status; log every change
+void evaluate_system_state(VehicleStatus *status, FaultStatus *faults);
 
-//Return the current system safe-state
+//Return the current system state
 SystemState state_get_current(void);
 
-//Request a reset from SAFE state; clears counters if ctx permits
-void state_request_reset(FaultContext *ctx);
+//Clear fault counters and arm reset flag so the next evaluation can exit SAFE
+void state_request_reset(FaultStatus *faults);
 
 #endif /* STATE_H */

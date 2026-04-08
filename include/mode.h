@@ -3,16 +3,16 @@
 
 #include "types.h"
 
-//Initialise the mode controller to OFF with no previous mode
+//Initialise mode controller to OFF with no previous mode
 void mode_init(void);
 
-//Request a transition to next_mode; forces FAULT on illegal transition
-void mode_update(Mode next_mode);
+//Read requested mode from input and drive transition; updates status and flags faults
+void update_mode(VehicleStatus *status, VehicleInput *input, FaultStatus *faults);
 
 //Return the currently active mode
 Mode mode_get_current(void);
 
-//Return the mode that was active before the last transition
+//Return the mode active before the last transition
 Mode mode_get_previous(void);
 
 #endif /* MODE_H */

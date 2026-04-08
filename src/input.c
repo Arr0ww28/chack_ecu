@@ -1,113 +1,84 @@
 #include "input.h"
 #include "types.h"
-#include <stddef.h>
+
 #include <stdio.h>
 
-
 //private state — one variable per validated signal
-static uint16_t s_last_speed = 0;
+static int16_t s_last_speed = 0;
 static int16_t s_last_temp  = 0;
 static uint8_t s_last_gear  = 0;
 static Mode    s_last_mode  = MODE_OFF;
-static int     s_initialised = 0;
 
-//initialise inputs
-void input_init(void)
+//Populate input struct from raw signal sources; resets fields to zero on entry
+void read_inputs(VehicleInput *input)
 {
-    s_last_speed  = 0;
-    s_last_temp   = 0;
-    s_last_gear   = 0;
-    s_last_mode   = MODE_OFF;
-    s_initialised = 1;
+    if (input == NULL)
+    {
+        fprintf(stderr, "[INPUT] read_inputs: NULL pointer\n");
+        return;
+    }
+
+    input->speed       = 0;
+    input->temperature = 0;
+    input->gear        = 0;
+    input->mode        = MODE_OFF;
 }
 
-//validate all fields in out against bounds; preserve last valid on rejection
-static int validate_inputs(VehicleInput *out)
+//Validate all fields in input against bounds; preserve last valid and update status on rejection
+void validate_inputs(VehicleInput *input, VehicleStatus *status)
 {
-    int      status    = 0;
-    uint16_t raw_speed = out->speed;
-    int16_t  raw_temp  = out->temperature;
-    uint8_t  raw_gear  = out->gear;
-    Mode     raw_mode  = out->mode;
+    if (input == NULL || status == NULL)
+    {
+        fprintf(stderr, "[INPUT] validate_inputs: NULL pointer\n");
+        return;
+    }
 
     //speed validation
-    if (raw_speed < INPUT_SPEED_MIN || raw_speed > INPUT_SPEED_MAX)
+    if (input->speed < INPUT_SPEED_MIN || input->speed > INPUT_SPEED_MAX)
     {
-        fprintf(stderr, "[INPUT] Invalid speed: %u — retaining last valid (%u)\n",
-                raw_speed, s_last_speed);
-        out->speed = s_last_speed;
-        status     = -1;
+        fprintf(stderr, "[INPUT] Invalid speed: %d — retaining last valid (%d)\n",
+                input->speed, s_last_speed);
+        input->speed = s_last_speed;
     }
     else
     {
-        s_last_speed = raw_speed;
-        out->speed   = raw_speed;
+        s_last_speed = input->speed;
     }
 
     //temperature validation
-    if (raw_temp < INPUT_TEMP_MIN || raw_temp > INPUT_TEMP_MAX)
+    if (input->temperature < INPUT_TEMP_MIN || input->temperature > INPUT_TEMP_MAX)
     {
         fprintf(stderr, "[INPUT] Invalid temperature: %d — retaining last valid (%d)\n",
-                raw_temp, s_last_temp);
-        out->temperature = s_last_temp;
-        status           = -1;
+                input->temperature, s_last_temp);
+        input->temperature = s_last_temp;
     }
     else
     {
-        s_last_temp      = raw_temp;
-        out->temperature = raw_temp;
+        s_last_temp = input->temperature;
     }
 
     //gear validation
-    if (raw_gear < INPUT_GEAR_MIN || raw_gear > INPUT_GEAR_MAX)
+    if (input->gear < INPUT_GEAR_MIN || input->gear > INPUT_GEAR_MAX)
     {
         fprintf(stderr, "[INPUT] Invalid gear: %u — retaining last valid (%u)\n",
-                raw_gear, s_last_gear);
-        out->gear = s_last_gear;
-        status    = -1;
+                input->gear, s_last_gear);
+        input->gear = s_last_gear;
     }
     else
     {
-        s_last_gear = raw_gear;
-        out->gear   = raw_gear;
+        s_last_gear = input->gear;
     }
 
     //mode validation
-    if (raw_mode >= MODE_INVALID)
+    if (input->mode >= MODE_INVALID)
     {
         fprintf(stderr, "[INPUT] Invalid mode: %d — retaining last valid (%d)\n",
-                (int)raw_mode, (int)s_last_mode);
-        out->mode = s_last_mode;
-        status    = -1;
+                (int)input->mode, (int)s_last_mode);
+        input->mode = s_last_mode;
     }
     else
     {
-        s_last_mode = raw_mode;
-        out->mode   = raw_mode;
+        s_last_mode    = input->mode;
+        status->active_mode = input->mode;
     }
-
-    return status;
-}
-
-//guard NULL then delegate all validation to validate_inputs
-int input_read(VehicleInput *out)
-{
-    if (out == NULL)
-    {
-        fprintf(stderr, "[INPUT] input_read: NULL output pointer\n");
-        return -1;
-    }
-
-    return validate_inputs(out);
-}
-
-//final snapshot
-const VehicleInput *read_input(void)
-{
-    static VehicleInput s_snapshot;
-    s_snapshot.speed       = s_last_speed;
-    s_snapshot.temperature = s_last_temp;
-    s_snapshot.gear        = s_last_gear;
-    s_snapshot.mode        = s_last_mode;
-    return &s_snapshot;
 }

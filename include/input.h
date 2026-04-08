@@ -10,10 +10,10 @@
 #define INPUT_GEAR_MIN    (0)
 #define INPUT_GEAR_MAX    (5)
 
-void input_init(void);
+//Populate input from raw signals; initialises internal state
+void read_inputs(VehicleInput *input);
 
-int input_read(VehicleInput *out);
+//Validate all fields in input against bounds; updates status on rejection
+void validate_inputs(VehicleInput *input, VehicleStatus *status);
 
-const VehicleInput *read_input(void);
-
-#endif 
+#endif
