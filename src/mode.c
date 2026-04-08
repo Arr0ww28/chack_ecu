@@ -105,6 +105,7 @@ void update_mode(VehicleStatus *status, VehicleInput *input, FaultStatus *faults
     }
 
     status->active_mode   = s_current_mode;
+    status->current_mode  = s_current_mode;
     status->previous_mode = s_previous_mode;
 }
 

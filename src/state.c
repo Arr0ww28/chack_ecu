@@ -1,5 +1,7 @@
 #include "state.h"
 #include "types.h"
+#include "mode.h"
+#include "fault.h"
 
 #include <stdio.h>
 
@@ -23,14 +25,21 @@ void init_system(VehicleStatus *status, FaultStatus *faults)
 
     s_current_state = NORMAL;
 
-    status->system_state  = NORMAL;
-    status->active_mode   = MODE_OFF;
-    status->previous_mode = MODE_OFF;
+    status->system_state          = NORMAL;
+    status->active_mode           = MODE_OFF;
+    status->current_mode          = MODE_OFF;
+    status->previous_mode         = MODE_OFF;
+    status->highest_priority_issue = PRIORITY_NONE;
+
+    mode_init();
+    fault_init(faults);
 
     faults->major_fault_count    = 0U;
     faults->warning_count        = 0U;
     faults->critical_fault_count = 0U;
     faults->reset_requested      = 0U;
+
+    fprintf(stderr, "[STATE] System initialised — state=NORMAL, mode=OFF\n");
 }
 
 //Evaluate fault counts and update system_state in status; log every transition

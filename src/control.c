@@ -1,9 +1,9 @@
-#include "../include/control.h"
-#include "../include/types.h"
+#include "control.h"
+#include "types.h"
 #include <stddef.h>
 #include <stdio.h>
 
-void control_run_checks(const VehicleInput *input, VehicleStatus *status, FaultStatus *faults)
+void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultStatus *faults)
 {
     /* CERT MEM10-C: Validate all pointers before dereferencing */
     if ((input == NULL) || (status == NULL) || (faults == NULL))

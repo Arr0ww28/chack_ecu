@@ -15,6 +15,6 @@
  * @param status Pointer to the vehicle status (updated with priority info).
  * @param faults Pointer to the fault status (updates current cycle flags).
  */
-void control_run_checks(const VehicleInput *input, VehicleStatus *status, FaultStatus *faults);
+void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultStatus *faults);
 
 #endif /* CONTROL_H */
