@@ -3,12 +3,15 @@
 #include <stddef.h>
 #include <stdio.h>
 
-static int16_t s_last_speed = 0;
+
+//private state — one variable per validated signal
+static uint16_t s_last_speed = 0;
 static int16_t s_last_temp  = 0;
 static uint8_t s_last_gear  = 0;
 static Mode    s_last_mode  = MODE_OFF;
 static int     s_initialised = 0;
 
+//initialise inputs
 void input_init(void)
 {
     s_last_speed  = 0;
@@ -18,30 +21,19 @@ void input_init(void)
     s_initialised = 1;
 }
 
-//read inputs and validate
-int input_read(VehicleInput *out)
+//validate all fields in out against bounds; preserve last valid on rejection
+static int validate_inputs(VehicleInput *out)
 {
-    int     status = 0;
-    int16_t raw_speed;
-    int16_t raw_temp;
-    uint8_t raw_gear;
-    Mode    raw_mode;
-
-    if (out == NULL)
-    {
-        fprintf(stderr, "[INPUT] input_read: NULL output pointer\n");
-        return -1;
-    }
-
-    raw_speed = out->speed;
-    raw_temp  = out->temperature;
-    raw_gear  = out->gear;
-    raw_mode  = out->mode;
+    int      status    = 0;
+    uint16_t raw_speed = out->speed;
+    int16_t  raw_temp  = out->temperature;
+    uint8_t  raw_gear  = out->gear;
+    Mode     raw_mode  = out->mode;
 
     //speed validation
     if (raw_speed < INPUT_SPEED_MIN || raw_speed > INPUT_SPEED_MAX)
     {
-        fprintf(stderr, "[INPUT] Invalid speed: %d — retaining last valid (%d)\n",
+        fprintf(stderr, "[INPUT] Invalid speed: %u — retaining last valid (%u)\n",
                 raw_speed, s_last_speed);
         out->speed = s_last_speed;
         status     = -1;
@@ -66,6 +58,7 @@ int input_read(VehicleInput *out)
         out->temperature = raw_temp;
     }
 
+    //gear validation
     if (raw_gear < INPUT_GEAR_MIN || raw_gear > INPUT_GEAR_MAX)
     {
         fprintf(stderr, "[INPUT] Invalid gear: %u — retaining last valid (%u)\n",
@@ -96,8 +89,20 @@ int input_read(VehicleInput *out)
     return status;
 }
 
-//return last valid input — compose snapshot from individual statics
-const VehicleInput *input_get_last_valid(void)
+//guard NULL then delegate all validation to validate_inputs
+int input_read(VehicleInput *out)
+{
+    if (out == NULL)
+    {
+        fprintf(stderr, "[INPUT] input_read: NULL output pointer\n");
+        return -1;
+    }
+
+    return validate_inputs(out);
+}
+
+//compose and return the validated input snapshot
+const VehicleInput *read_input(void)
 {
     static VehicleInput s_snapshot;
     s_snapshot.speed       = s_last_speed;
