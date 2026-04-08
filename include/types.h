@@ -20,4 +20,19 @@ typedef struct
     Mode    mode;         
 } VehicleInput;
 
+typedef enum
+{
+    SAFE_STATE_NORMAL   = 0,
+    SAFE_STATE_DEGRADED = 1,
+    SAFE_STATE_SAFE     = 2
+} SystemState;
+
+typedef struct
+{
+    uint8_t major_fault_count;
+    uint8_t warning_count;
+    uint8_t critical_fault_count;
+    uint8_t reset_requested;
+} FaultContext;
+
 #endif 
