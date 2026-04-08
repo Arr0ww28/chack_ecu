@@ -18,10 +18,29 @@ void read_inputs(VehicleInput *input)
         return;
     }
 
-    input->speed       = 0;
-    input->temperature = 0;
-    input->gear        = 0;
-    input->mode        = MODE_OFF;
+    int speed = 0, temp = 0, gear = 0, mode = 0;
+    
+    printf("\n[SIM Input] Enter Speed, Temp, Gear, Mode (0=OFF, 1=ACC, 2=IGN_ON, 3=FAULT): ");
+    
+    if (scanf("%d %d %d %d", &speed, &temp, &gear, &mode) == 4)
+    {
+        input->speed       = (int16_t)speed;
+        input->temperature = (int16_t)temp;
+        input->gear        = (uint8_t)gear;
+        input->mode        = (Mode)mode;
+    }
+    else
+    {
+        fprintf(stderr, "[INPUT] Failed to read inputs, defaulting to 0 / MODE_OFF\n");
+        // Clear stdin buffer in case of bad input (to avoid infinite loop of fails)
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) {}
+        
+        input->speed       = 0;
+        input->temperature = 0;
+        input->gear        = 0;
+        input->mode        = MODE_OFF;
+    }
 }
 
 //Validate all fields in input against bounds; preserve last valid and update status on rejection
