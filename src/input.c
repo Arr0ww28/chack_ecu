@@ -5,7 +5,7 @@
 
 
 //private state — one variable per validated signal
-static int16_t s_last_speed = 0;
+static uint16_t s_last_speed = 0;
 static int16_t s_last_temp  = 0;
 static uint8_t s_last_gear  = 0;
 static Mode    s_last_mode  = MODE_OFF;
