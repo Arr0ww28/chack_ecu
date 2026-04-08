@@ -14,6 +14,6 @@ void input_init(void);
 
 int input_read(VehicleInput *out);
 
-const VehicleInput *input_get_last_valid(void);
+const VehicleInput *read_input(void);
 
 #endif 
