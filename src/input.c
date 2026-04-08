@@ -102,7 +102,7 @@ int input_read(VehicleInput *out)
 }
 
 //final snapshot
-const VehicleInput *read_input(void)
+const VehicleInput read_input(void)
 {
     static VehicleInput s_snapshot;
     s_snapshot.speed       = s_last_speed;
