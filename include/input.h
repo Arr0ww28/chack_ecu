@@ -1,8 +1,19 @@
 #ifndef INPUT_H
 #define INPUT_H
-
 #include "types.h"
 
-/* TODO: Function prototypes for input handling */
+//Bounds for each variable
+#define INPUT_SPEED_MIN   (0)
+#define INPUT_SPEED_MAX   (200)
+#define INPUT_TEMP_MIN    (-40)
+#define INPUT_TEMP_MAX    (150)
+#define INPUT_GEAR_MIN    (0)
+#define INPUT_GEAR_MAX    (5)
 
-#endif /* INPUT_H */
+void input_init(void);
+
+int input_read(VehicleInput *out);
+
+const VehicleInput *input_get_last_valid(void);
+
+#endif 
