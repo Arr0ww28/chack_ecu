@@ -30,6 +30,16 @@ typedef enum {
     PRIORITY_CRITICAL_OVERHEAT = 4
 } FaultPriority;
 
+typedef enum
+{
+    SAFE_STATE_NORMAL   = 0,
+    SAFE_STATE_DEGRADED = 1,
+    SAFE_STATE_SAFE     = 2
+} SystemState;
+
+
+
+
 typedef struct {
     Mode current_mode;
     Mode previous_mode;
