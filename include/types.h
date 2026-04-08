@@ -29,21 +29,15 @@ typedef enum
 
 typedef struct
 {
-    SystemState system_state;
-    Mode        active_mode;
-    Mode        previous_mode;
-} VehicleStatus;
-
-typedef struct
-{
     uint8_t major_fault_count;
     uint8_t warning_count;
     uint8_t critical_fault_count;
     uint8_t reset_requested;
+    uint16_t current_cycle_flags; /* Bits set during the current cycle */
+    uint16_t persistent_flags;    /* Latched faults */
+    uint8_t  counters[16];        /* Fault persistence tracking */
 } FaultStatus;
 
-#endif 
-/* Add to types.h */
 typedef enum {
     PRIORITY_NONE = 0,
     PRIORITY_HIGH_TEMP = 1,
@@ -52,27 +46,13 @@ typedef enum {
     PRIORITY_CRITICAL_OVERHEAT = 4
 } FaultPriority;
 
-typedef enum
-{
-    SAFE_STATE_NORMAL   = 0,
-    SAFE_STATE_DEGRADED = 1,
-    SAFE_STATE_SAFE     = 2
-} SystemState;
-
-
-
-
 typedef struct {
+SystemState system_state;
+    Mode active_mode;
     Mode current_mode;
     Mode previous_mode;
     FaultPriority highest_priority_issue; /* Used for priority reporting */
 } VehicleStatus;
-
-typedef struct {
-    uint16_t current_cycle_flags; /* Bits set during the current cycle */
-    uint16_t persistent_flags;    /* Latched faults */
-    uint8_t  counters[16];        /* Fault persistence tracking */
-} FaultStatus;
 
 /* Fault Bits for Bitwise flags */
 #define FAULT_BIT_OVERSPEED         (1U << 0)
@@ -80,3 +60,4 @@ typedef struct {
 #define FAULT_BIT_HIGH_TEMP         (1U << 2)
 #define FAULT_BIT_INVALID_GEAR      (1U << 3)
 #define FAULT_BIT_INVALID_MODE      (1U << 4)
+#endif 
