@@ -101,7 +101,7 @@ int input_read(VehicleInput *out)
     return validate_inputs(out);
 }
 
-//compose and return the validated input snapshot
+//final snapshot
 const VehicleInput *read_input(void)
 {
     static VehicleInput s_snapshot;
