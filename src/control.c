@@ -41,8 +41,9 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
     else if (input->temperature > CONTROL_TEMP_HIGH_THRESHOLD)
     {
         faults->current_cycle_flags |= FAULT_BIT_HIGH_TEMP;
+        faults->major_fault_count++;
     }
-    else if (input->temperature > CONTROL_WARNING_TEMP)
+    else if (input->temperature >= CONTROL_WARNING_TEMP)
     {
         faults->current_cycle_flags |= FAULT_BIT_WARNING_TEMP;
         faults->warning_count++;
@@ -51,8 +52,9 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
     if (input->speed > CONTROL_OVERSPEED_THRESHOLD)
     {
         faults->current_cycle_flags |= FAULT_BIT_OVERSPEED;
+        faults->major_fault_count++;
     }
-    else if (input->speed > CONTROL_WARNING_SPEED)
+    else if (input->speed >= CONTROL_WARNING_SPEED)
     {
         faults->current_cycle_flags |= FAULT_BIT_WARNING_SPEED;
         faults->warning_count++;

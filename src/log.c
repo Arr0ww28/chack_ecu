@@ -46,7 +46,12 @@ static const char *priority_to_string(FaultPriority p)
 /* Logs individual fault flag status from a bitmask */
 static void log_fault_flags(uint16_t flags, const char *label)
 {
-    printf("  %s: 0x%04X [ ", label, flags);
+    printf("  %s: %d%d%d%d%d [ ", label,
+           (flags & FAULT_BIT_INVALID_MODE) ? 1 : 0,
+           (flags & FAULT_BIT_INVALID_GEAR) ? 1 : 0,
+           (flags & FAULT_BIT_HIGH_TEMP) ? 1 : 0,
+           (flags & FAULT_BIT_CRITICAL_OVERHEAT) ? 1 : 0,
+           (flags & FAULT_BIT_OVERSPEED) ? 1 : 0);
 
     if (flags & FAULT_BIT_OVERSPEED)
     {
@@ -80,7 +85,12 @@ static void log_fault_flags(uint16_t flags, const char *label)
 static void fprint_fault_flags(FILE *fp, uint16_t flags, const char *label)
 {
     if (!fp) return;
-    fprintf(fp, "  %s: 0x%04X [ ", label, flags);
+    fprintf(fp, "  %s: %d%d%d%d%d [ ", label,
+           (flags & FAULT_BIT_INVALID_MODE) ? 1 : 0,
+           (flags & FAULT_BIT_INVALID_GEAR) ? 1 : 0,
+           (flags & FAULT_BIT_HIGH_TEMP) ? 1 : 0,
+           (flags & FAULT_BIT_CRITICAL_OVERHEAT) ? 1 : 0,
+           (flags & FAULT_BIT_OVERSPEED) ? 1 : 0);
 
     if (flags & FAULT_BIT_OVERSPEED)
         fprintf(fp, "OVERSPEED ");
