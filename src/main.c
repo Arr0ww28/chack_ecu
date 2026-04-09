@@ -15,7 +15,7 @@ int main(void)
     FaultStatus   faults = {0};
 
     printf("========================================\n");
-    printf("   VEHICLE ECU SIMULATOR — STARTING     \n");
+    printf("   VEHICLE ECU SIMULATOR      \n");
     printf("========================================\n");
 
     init_system(&status, &faults);
@@ -27,32 +27,32 @@ int main(void)
 
         //read inputs
         read_inputs(&input);
-        printf("[MAIN] Inputs read - speed=%d temp=%d gear=%u mode=%d\n",
+        printf("[MAIN] Inputs read: speed=%d temp=%d gear=%u mode=%d\n",
                input.speed, input.temperature, (unsigned)input.gear, (int)input.mode);
 
         //validate inputs
         validate_inputs(&input, &status);
-        printf("[MAIN] Inputs validated - speed=%d temp=%d gear=%u mode=%d\n",
+        printf("[MAIN] Inputs validated: speed=%d temp=%d gear=%u mode=%d\n",
                input.speed, input.temperature, (unsigned)input.gear, (int)input.mode);
 
         //update mode
         update_mode(&status, &input, &faults);
-        printf("[MAIN] Mode updated - active=%d previous=%d\n",
+        printf("[MAIN] Mode updated a:ctive=%d previous=%d\n",
                (int)status.active_mode, (int)status.previous_mode);
 
         //control checks
         run_control_checks(&input, &status, &faults);
-        printf("[MAIN] Control checks done - cycle_flags=0x%04X priority=%d\n",
+        printf("[MAIN] Control checks done: cycle_flags=0x%04X priority=%d\n",
                faults.current_cycle_flags, (int)status.highest_priority_issue);
 
         //fault status
         update_fault_status(&faults);
-        printf("[MAIN] Fault status updated - persistent=0x%04X\n",
+        printf("[MAIN] Fault status updated: persistent=0x%04X\n",
                faults.persistent_flags);
 
         /* Step 6: Evaluate overall system state */
         evaluate_system_state(&status, &faults);
-        printf("[MAIN] State evaluated - system_state=%d\n",
+        printf("[MAIN] State evaluated: system_state=%d\n",
                (int)status.system_state);
 
         /* Step 7: Log full cycle summary */
