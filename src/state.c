@@ -65,7 +65,6 @@ void evaluate_system_state(VehicleStatus *status, FaultStatus *faults)
                 status->system_state = next_state;
             }
             else if (faults->major_fault_count >= STATE_MAJOR_FAULT_THRESHOLD ||
-                     faults->warning_count      >= STATE_WARNING_REPEAT_THRESHOLD ||
                     faults->critical_fault_count>= 1)
             {
                 next_state = DEGRADED;

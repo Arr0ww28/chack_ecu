@@ -77,7 +77,7 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status)
     }
 
     //gear validation
-    if (input->gear < INPUT_GEAR_MIN || input->gear > INPUT_GEAR_MAX)
+    if (input->gear > INPUT_GEAR_MAX)
     {
         fprintf(stderr, "[INPUT] Invalid gear: %u — retaining last valid (%u)\n",
                 input->gear, s_last_gear);
