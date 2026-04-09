@@ -20,7 +20,7 @@ void read_inputs(VehicleInput *input)
 
     int speed = 0, temp = 0, gear = 0, mode = 0;
     
-    printf("\n[SIM Input] Enter Speed, Temp, Gear, Mode (0=OFF, 1=ACC, 2=IGN_ON, 3=FAULT): ");
+    printf("\n[SIM Input] Enter Speed, Temp, Gear, Mode (0=OFF, 1=ACC, 2=IGN_ON): ");
     
     if (scanf("%d %d %d %d", &speed, &temp, &gear, &mode) == 4)
     {

@@ -51,6 +51,12 @@ static int is_transition_allowed(Mode current, Mode next)
         case MODE_IGNITION_ON:
             switch (next)
             {
+                case MODE_IGNITION_ON:
+                    allowed = 1;
+                    break;
+                case MODE_ACC:
+                    allowed = 1;
+                    break;
                 case MODE_OFF:
                     allowed = 1;
                     break;
@@ -58,10 +64,6 @@ static int is_transition_allowed(Mode current, Mode next)
                     allowed = 0;
                     break;
             }
-            break;
-
-        case MODE_FAULT:
-            allowed = 0;
             break;
 
         default:
