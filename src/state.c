@@ -39,7 +39,7 @@ void init_system(VehicleStatus *status, FaultStatus *faults)
     faults->critical_fault_count = 0U;
     faults->reset_requested      = 0U;
 
-    fprintf(stderr, "[STATE] System initialised — state=NORMAL, mode=OFF\n");
+    fprintf(stderr, "[STATE] System initialised: state=NORMAL, mode=OFF\n");
 }
 
 //Evaluate fault counts and update system_state in status; log every transition
