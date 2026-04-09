@@ -27,7 +27,7 @@ int main(void)
 
         //read inputs
         read_inputs(&input);
-        printf("[MAIN] Inputs read — speed=%d temp=%d gear=%u mode=%d\n",
+        printf("[MAIN] Inputs read - speed=%d temp=%d gear=%u mode=%d\n",
                input.speed, input.temperature, (unsigned)input.gear, (int)input.mode);
 
         //validate inputs
