@@ -1,4 +1,5 @@
 #include "control.h"
+#include "fault.h"
 #include "types.h"
 #include <stddef.h>
 #include <stdio.h>
@@ -41,11 +42,20 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
     {
         faults->current_cycle_flags |= FAULT_BIT_HIGH_TEMP;
     }
-
+    else if (input->temperature > CONTROL_WARNING_TEMP)
+    {
+        faults->current_cycle_flags |= FAULT_BIT_WARNING_TEMP;
+        faults->warning_count++;
+    }
     /* 3. Evaluate Overspeed */
     if (input->speed > CONTROL_OVERSPEED_THRESHOLD)
     {
         faults->current_cycle_flags |= FAULT_BIT_OVERSPEED;
+    }
+    else if (input->speed > CONTROL_WARNING_SPEED)
+    {
+        faults->current_cycle_flags |= FAULT_BIT_WARNING_SPEED;
+        faults->warning_count++;
     }
 
     /* * ---------------------------------------------------------
