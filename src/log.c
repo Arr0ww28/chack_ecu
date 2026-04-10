@@ -181,8 +181,43 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
 
     /* ---- System State ---- */
     printf("[STATE]\n");
-    printf("  System State      : %s\n", state_to_string(status->system_state));
-    printf("  Highest Priority  : %s\n", priority_to_string(status->highest_priority_issue));
+    printf("  System State : %s\n", state_to_string(status->system_state));
+    
+    /* ---- Active Faults in Priority Order ---- */
+    printf("[ACTIVE FAULTS - Priority Order]\n");
+    
+    /* Priority 1: Critical Overheat */
+    if (faults->current_cycle_flags & FAULT_BIT_CRITICAL_OVERHEAT)
+    {
+        printf("  1. CRITICAL_OVERHEAT\n");
+    }
+    
+    /* Priority 2: Invalid Mode / Invalid Gear */
+    if (faults->current_cycle_flags & FAULT_BIT_INVALID_MODE)
+    {
+        printf("  2. INVALID_MODE\n");
+    }
+    if (faults->current_cycle_flags & FAULT_BIT_INVALID_GEAR)
+    {
+        printf("  2. INVALID_GEAR\n");
+    }
+    
+    /* Priority 3: Overspeed */
+    if (faults->current_cycle_flags & FAULT_BIT_OVERSPEED)
+    {
+        printf("  3. OVERSPEED\n");
+    }
+    
+    /* Other faults */
+    if (faults->current_cycle_flags & FAULT_BIT_HIGH_TEMP)
+    {
+        printf("  4. HIGH_TEMP\n");
+    }
+    
+    if ((faults->current_cycle_flags & 0x0FFF) == 0U)
+    {
+        printf("  (none)\n");
+    }
 
     printf("========================================\n\n");
 }
