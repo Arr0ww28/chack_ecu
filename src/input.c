@@ -53,7 +53,7 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status)
     }
 
     //speed validation
-    if (input->speed < INPUT_SPEED_MIN || input->speed > INPUT_SPEED_MAX)
+    if (input->speed > INPUT_SPEED_MAX)
     {
         fprintf(stderr, "[INPUT] Invalid speed: %d — retaining last valid (%d)\n",
                 input->speed, s_last_speed);
