@@ -30,7 +30,7 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
     }
 
     /* 2. Evaluate Temperature */
-    if (input->temperature > CONTROL_TEMP_CRITICAL_THRESHOLD)
+    if (input->temperature >= CONTROL_TEMP_CRITICAL_THRESHOLD)
     {
         faults->current_cycle_flags |= FAULT_BIT_CRITICAL_OVERHEAT;
         if (faults->critical_fault_count < 255U)

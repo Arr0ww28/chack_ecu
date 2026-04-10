@@ -6,6 +6,7 @@
 /* MISRA-C: Thresholds defined as constants to avoid magic numbers */
 #define CONTROL_OVERSPEED_THRESHOLD     (120)
 #define CONTROL_TEMP_CRITICAL_THRESHOLD (110)
+#define CONTROL_TEMP_CRITICAL_THRESHOLD_NEG (-20)
 #define CONTROL_TEMP_HIGH_THRESHOLD     (95)
 #define CONTROL_GEAR_MAX                (5)
 #define CONTROL_WARNING_TEMP (100)

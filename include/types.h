@@ -14,7 +14,7 @@ typedef enum
 
 typedef struct
 {
-    int16_t speed;        
+    uint16_t speed;        
     int16_t temperature;  
     uint8_t gear;         
     Mode    mode;         
