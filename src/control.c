@@ -15,21 +15,14 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
 
     /* * MISRA-C: Clear control-specific flags for the current cycle.
      * We use bitwise AND with the bitwise NOT of the mask to safely clear specific bits
-     * without affecting faults set by other modules (like mode.c).
+     * without affecting faults set by other modules (like input.c and mode.c).
+     * Note: INVALID_GEAR and INVALID_MODE are handled by validate_inputs(), not here.
      */
     faults->current_cycle_flags &= ~(FAULT_BIT_OVERSPEED | 
                                      FAULT_BIT_CRITICAL_OVERHEAT | 
-                                     FAULT_BIT_HIGH_TEMP | 
-                                     FAULT_BIT_INVALID_GEAR);
+                                     FAULT_BIT_HIGH_TEMP);
 
-    /* 1. Evaluate Gear Validity */
-    /* Note: MIN gear is 0, which is naturally enforced by uint8_t, but we check MAX */
-    if (input->gear > CONTROL_GEAR_MAX)
-    {
-        faults->current_cycle_flags |= FAULT_BIT_INVALID_GEAR;
-    }
-
-    /* 2. Evaluate Temperature */
+    /* 1. Evaluate Temperature */
     if (input->temperature >= CONTROL_TEMP_CRITICAL_THRESHOLD)
     {
         faults->current_cycle_flags |= FAULT_BIT_CRITICAL_OVERHEAT;
@@ -48,7 +41,7 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
         faults->current_cycle_flags |= FAULT_BIT_WARNING_TEMP;
         faults->warning_count++;
     }
-    /* 3. Evaluate Overspeed */
+    /* 2. Evaluate Overspeed */
     if (input->speed > CONTROL_OVERSPEED_THRESHOLD)
     {
         faults->current_cycle_flags |= FAULT_BIT_OVERSPEED;

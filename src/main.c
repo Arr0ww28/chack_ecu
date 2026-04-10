@@ -58,7 +58,7 @@ int main(void)
         }
 
         //validate inputs
-        validate_inputs(&input, &status);
+        validate_inputs(&input, &status, &faults);
         printf("[MAIN] Inputs validated: speed=%d temp=%d gear=%u mode=%d\n",
                input.speed, input.temperature, (unsigned)input.gear, (int)input.mode);
 

@@ -11,7 +11,7 @@
 //Populate input from raw signals; initialises internal state
 void read_inputs(VehicleInput *input);
 
-//Validate all fields in input against bounds; updates status on rejection
-void validate_inputs(VehicleInput *input, VehicleStatus *status);
+//Validate all fields in input against bounds; sets fault bits on detection, then corrects to last valid
+void validate_inputs(VehicleInput *input, VehicleStatus *status, FaultStatus *faults);
 
 #endif

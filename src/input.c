@@ -1,5 +1,6 @@
 #include "input.h"
 #include "types.h"
+#include "fault.h"
 
 #include <stdio.h>
 
@@ -43,10 +44,10 @@ void read_inputs(VehicleInput *input)
     }
 }
 
-//Validate all fields in input against bounds; preserve last valid and update status on rejection
-void validate_inputs(VehicleInput *input, VehicleStatus *status)
+//Validate all fields in input against bounds; sets fault bits on detection, then corrects to last valid
+void validate_inputs(VehicleInput *input, VehicleStatus *status, FaultStatus *faults)
 {
-    if (input == NULL || status == NULL)
+    if (input == NULL || status == NULL || faults == NULL)
     {
         fprintf(stderr, "[INPUT] validate_inputs: NULL pointer\n");
         return;
@@ -76,9 +77,10 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status)
         s_last_temp = input->temperature;
     }
 
-    //gear validation
+    //gear validation — SET FAULT BIT BEFORE CORRECTING
     if (input->gear > INPUT_GEAR_MAX)
     {
+        faults->current_cycle_flags |= FAULT_BIT_INVALID_GEAR;
         fprintf(stderr, "[INPUT] Invalid gear: %u — retaining last valid (%u)\n",
                 input->gear, s_last_gear);
         input->gear = s_last_gear;
@@ -88,9 +90,10 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status)
         s_last_gear = input->gear;
     }
 
-    //mode validation
+    //mode validation — SET FAULT BIT BEFORE CORRECTING
     if (input->mode >= MODE_INVALID)
     {
+        faults->current_cycle_flags |= FAULT_BIT_INVALID_MODE;
         fprintf(stderr, "[INPUT] Invalid mode: %d — retaining last valid (%d)\n",
                 (int)input->mode, (int)s_last_mode);
         input->mode = s_last_mode;
