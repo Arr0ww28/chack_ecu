@@ -69,6 +69,14 @@ static int is_transition_allowed(Mode current, Mode next)
             }
             break;
 
+        case MODE_FAULT:
+            /* Recovery path: Allow transition back to OFF to prevent deadlock */
+            if (next == MODE_OFF || next == MODE_ACC)
+            {
+                allowed = 1;
+            }
+            break;
+
         default:
             allowed = 0;
             break;
