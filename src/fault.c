@@ -41,15 +41,9 @@ void increment_fault_counter(FaultStatus *faults, uint8_t fault_index)
 {
     if (faults != NULL)
     {
-        /* Defensive Programming: Prevent out-of-bounds array access */
-        if (fault_index < 16U)
-        {
-            /* MISRA-C / CERT INT32-C: Prevent integer overflow of the uint8_t counter */
-            if (faults->counters[fault_index] < 255U)
-            {
-                faults->counters[fault_index]++;
-            }
-        }
+    
+        faults->counters[fault_index]++;        
+        
     }
 }
 
@@ -57,7 +51,7 @@ void update_fault_status(FaultStatus *faults)
 {
     if (faults == NULL)
     {
-        fprintf(stderr, "[FAULT] ERR: Null pointer provided to update_fault_status\n");
+        fprintf(stderr, "[FAULT] ERR: Null pointer provided\n");
         return;
     }
 
@@ -81,10 +75,6 @@ void update_fault_status(FaultStatus *faults)
         }
         else
         {
-            /* * Debouncing Logic: If the fault is NOT present this cycle, 
-             * reset the consecutive occurrence counter. 
-             * Note: The persistent_flag remains latched until a formal system reset.
-             */
             faults->counters[i] = 0U;
         }
     }

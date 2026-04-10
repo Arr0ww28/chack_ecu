@@ -21,7 +21,7 @@ void read_inputs(VehicleInput *input)
 
     int speed = 0, temp = 0, gear = 0, mode = 0;
     
-    printf("\n[SIM Input] Enter Speed, Temp, Gear, Mode (0=OFF, 1=ACC, 2=IGN_ON): ");
+    printf("\n[Input] Enter Speed, Temp, Gear, Mode (0=OFF, 1=ACC, 2=IGN_ON): ");
     
     if (scanf("%d %d %d %d", &speed, &temp, &gear, &mode) == 4)
     {
@@ -49,17 +49,18 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status, FaultStatus *fa
 {
     if (input == NULL || status == NULL || faults == NULL)
     {
-        fprintf(stderr, "[INPUT] validate_inputs: NULL pointer\n");
+        fprintf(stderr, "[INPUT] NULL pointer\n");
         return;
     }
 
-    /* Clear input validation fault bits at start of each cycle */
-    faults->current_cycle_flags &= ~(FAULT_BIT_INVALID_GEAR | FAULT_BIT_INVALID_MODE);
+    faults->current_cycle_flags &= ~(FAULT_BIT_OVERSPEED | 
+                                     FAULT_BIT_CRITICAL_OVERHEAT | 
+                                     FAULT_BIT_HIGH_TEMP | FAULT_BIT_INVALID_GEAR | FAULT_BIT_INVALID_MODE);
 
-    //speed validation
+
     if (input->speed > INPUT_SPEED_MAX)
     {
-        fprintf(stderr, "[INPUT] Invalid speed: %d — retaining last valid (%d)\n",
+        fprintf(stderr, "[INPUT] Invalid speed: %d - retaining last valid (%d)\n",
                 input->speed, s_last_speed);
         input->speed = s_last_speed;
     }
@@ -71,7 +72,7 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status, FaultStatus *fa
     //temperature validation
     if (input->temperature < INPUT_TEMP_MIN || input->temperature > INPUT_TEMP_MAX)
     {
-        fprintf(stderr, "[INPUT] Invalid temperature: %d — retaining last valid (%d)\n",
+        fprintf(stderr, "[INPUT] Invalid temperature: %d - retaining last valid (%d)\n",
                 input->temperature, s_last_temp);
         input->temperature = s_last_temp;
     }
@@ -84,7 +85,7 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status, FaultStatus *fa
     if (input->gear > INPUT_GEAR_MAX)
     {
         faults->current_cycle_flags |= FAULT_BIT_INVALID_GEAR;
-        fprintf(stderr, "[INPUT] Invalid gear: %u — retaining last valid (%u)\n",
+        fprintf(stderr, "[INPUT] Invalid gear: %u - retaining last valid (%u)\n",
                 input->gear, s_last_gear);
         input->gear = s_last_gear;
     }
@@ -97,7 +98,7 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status, FaultStatus *fa
     if (input->mode >= MODE_INVALID)
     {
         faults->current_cycle_flags |= FAULT_BIT_INVALID_MODE;
-        fprintf(stderr, "[INPUT] Invalid mode: %d — retaining last valid (%d)\n",
+        fprintf(stderr, "[INPUT] Invalid mode: %d - retaining last valid (%d)\n",
                 (int)input->mode, (int)s_last_mode);
         input->mode = s_last_mode;
     }

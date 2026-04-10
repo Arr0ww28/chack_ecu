@@ -29,20 +29,6 @@ static const char *state_to_string(SystemState s)
     }
 }
 
-/* Maps FaultPriority enum values to human-readable strings */
-static const char *priority_to_string(FaultPriority p)
-{
-    switch (p)
-    {
-        case PRIORITY_NONE:              return "NONE";
-        case PRIORITY_HIGH_TEMP:         return "HIGH_TEMP";
-        case PRIORITY_OVERSPEED:         return "OVERSPEED";
-        case PRIORITY_INVALID_GEAR_MODE: return "INVALID_GEAR_MODE";
-        case PRIORITY_CRITICAL_OVERHEAT: return "CRITICAL_OVERHEAT";
-        default:                         return "UNKNOWN";
-    }
-}
-
 /* Logs individual fault flag status from a bitmask */
 static void log_fault_flags(uint16_t flags, const char *label)
 {

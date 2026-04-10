@@ -7,7 +7,6 @@
 
 static SystemState s_current_state = NORMAL;
 
-//Log a state transition with a reason string
 static void log_transition(SystemState from, SystemState to, const char *reason)
 {
     fprintf(stderr, "[STATE] Transition %d -> %d : %s\n",
@@ -19,7 +18,7 @@ void init_system(VehicleStatus *status, FaultStatus *faults)
 {
     if (status == NULL || faults == NULL)
     {
-        fprintf(stderr, "[STATE] init_system: NULL pointer\n");
+        fprintf(stderr, "[STATE] NULL pointer\n");
         return;
     }
 
@@ -42,7 +41,7 @@ void init_system(VehicleStatus *status, FaultStatus *faults)
     fprintf(stderr, "[STATE] System initialised: state=NORMAL, mode=OFF\n");
 }
 
-//Evaluate fault counts and update system_state in status; log every transition
+//Evaluate fault counts and update system_state in status
 void evaluate_system_state(VehicleStatus *status, FaultStatus *faults)
 {
     SystemState next_state;
@@ -92,7 +91,7 @@ void evaluate_system_state(VehicleStatus *status, FaultStatus *faults)
             {
                 next_state = NORMAL;
                 log_transition(s_current_state, next_state,
-                               "faults cleared — recovering to NORMAL");
+                               "faults cleared - recovering to NORMAL");
                 s_current_state      = next_state;
                 status->system_state = next_state;
             }
@@ -109,7 +108,7 @@ void evaluate_system_state(VehicleStatus *status, FaultStatus *faults)
             {
                 next_state = NORMAL;
                 log_transition(s_current_state, next_state,
-                               "explicit reset accepted — all faults cleared");
+                               "explicit reset accepted - all faults cleared");
                 s_current_state      = next_state;
                 status->system_state = next_state;
             }
@@ -120,7 +119,7 @@ void evaluate_system_state(VehicleStatus *status, FaultStatus *faults)
             break;
 
         default:
-            fprintf(stderr, "[STATE] Unknown state %d — forcing SAFE\n",
+            fprintf(stderr, "[STATE] Unknown state %d - forcing SAFE\n",
                     (int)s_current_state);
             s_current_state      = SAFE;
             status->system_state = SAFE;
@@ -139,7 +138,7 @@ void state_request_reset(FaultStatus *faults)
 {
     if (faults == NULL)
     {
-        fprintf(stderr, "[STATE] state_request_reset: NULL pointer\n");
+        fprintf(stderr, "[STATE] NULL pointer\n");
         return;
     }
 

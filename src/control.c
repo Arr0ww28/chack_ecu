@@ -6,18 +6,12 @@
 
 void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultStatus *faults)
 {
-    /* CERT MEM10-C: Validate all pointers before dereferencing */
     if ((input == NULL) || (status == NULL) || (faults == NULL))
     {
-        fprintf(stderr, "[CONTROL] ERR: Null pointer provided to control_run_checks\n");
+        fprintf(stderr, "[CONTROL] ERR: Null pointer provided\n");
         return;
     }
 
-    /* * MISRA-C: Clear control-specific flags for the current cycle.
-     * We use bitwise AND with the bitwise NOT of the mask to safely clear specific bits
-     * without affecting faults set by other modules (like input.c and mode.c).
-     * Note: INVALID_GEAR and INVALID_MODE are cleared by validate_inputs(), not here.
-     */
     faults->current_cycle_flags &= ~(FAULT_BIT_OVERSPEED | 
                                      FAULT_BIT_CRITICAL_OVERHEAT | 
                                      FAULT_BIT_HIGH_TEMP);
@@ -26,10 +20,8 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
     if (input->temperature > CONTROL_TEMP_CRITICAL_THRESHOLD)
     {
         faults->current_cycle_flags |= FAULT_BIT_CRITICAL_OVERHEAT;
-        if (faults->critical_fault_count < 255U)
-        {
-            faults->critical_fault_count++;
-        }
+        faults->critical_fault_count++;
+        
     }
     else if (input->temperature > CONTROL_TEMP_HIGH_THRESHOLD)
     {

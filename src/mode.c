@@ -70,7 +70,6 @@ static int is_transition_allowed(Mode current, Mode next)
             break;
 
         case MODE_FAULT:
-            /* Recovery path: Allow transition back to OFF to prevent deadlock */
             if (next == MODE_OFF || next == MODE_ACC)
             {
                 allowed = 1;
@@ -100,7 +99,7 @@ void update_mode(VehicleStatus *status, VehicleInput *input, FaultStatus *faults
 
     if (next_mode >= MODE_INVALID)
     {
-        fprintf(stderr, "[MODE] Out-of-range mode: %d — forcing FAULT\n",
+        fprintf(stderr, "[MODE] Out-of-range mode: %d - forcing FAULT\n",
                 (int)next_mode);
         s_previous_mode      = s_current_mode;
         s_current_mode       = MODE_FAULT;
@@ -108,7 +107,7 @@ void update_mode(VehicleStatus *status, VehicleInput *input, FaultStatus *faults
     }
     else if (is_transition_allowed(s_current_mode, next_mode) == 0)
     {
-        fprintf(stderr, "[MODE] Illegal transition %d -> %d — forcing FAULT\n",
+        fprintf(stderr, "[MODE] Illegal transition %d -> %d - forcing FAULT\n",
                 (int)s_current_mode, (int)next_mode);
         s_previous_mode      = s_current_mode;
         s_current_mode       = MODE_FAULT;
