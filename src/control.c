@@ -16,7 +16,7 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
     /* * MISRA-C: Clear control-specific flags for the current cycle.
      * We use bitwise AND with the bitwise NOT of the mask to safely clear specific bits
      * without affecting faults set by other modules (like input.c and mode.c).
-     * Note: INVALID_GEAR and INVALID_MODE are handled by validate_inputs(), not here.
+     * Note: INVALID_GEAR and INVALID_MODE are cleared by validate_inputs(), not here.
      */
     faults->current_cycle_flags &= ~(FAULT_BIT_OVERSPEED | 
                                      FAULT_BIT_CRITICAL_OVERHEAT | 

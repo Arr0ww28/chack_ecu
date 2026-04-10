@@ -53,6 +53,9 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status, FaultStatus *fa
         return;
     }
 
+    /* Clear input validation fault bits at start of each cycle */
+    faults->current_cycle_flags &= ~(FAULT_BIT_INVALID_GEAR | FAULT_BIT_INVALID_MODE);
+
     //speed validation
     if (input->speed > INPUT_SPEED_MAX)
     {
