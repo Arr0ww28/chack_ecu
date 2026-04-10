@@ -69,12 +69,12 @@ static int is_transition_allowed(Mode current, Mode next)
             }
             break;
 
-        case MODE_FAULT:
-            if (next == MODE_OFF || next == MODE_ACC)
-            {
-                allowed = 1;
-            }
-            break;
+        //case MODE_FAULT:
+        //    if (next == MODE_OFF || next == MODE_ACC)
+        //    {
+        //        allowed = 1;
+        //    }
+        //    break;
 
         default:
             allowed = 0;
