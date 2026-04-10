@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 //private state — one variable per validated signal
-static int16_t s_last_speed = 0;
+static uint16_t s_last_speed = 0;
 static int16_t s_last_temp  = 0;
 static uint8_t s_last_gear  = 0;
 static Mode    s_last_mode  = MODE_OFF;
@@ -53,7 +53,7 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status)
     }
 
     //speed validation
-    if (input->speed < INPUT_SPEED_MIN || input->speed > INPUT_SPEED_MAX)
+    if (input->speed > INPUT_SPEED_MAX)
     {
         fprintf(stderr, "[INPUT] Invalid speed: %d — retaining last valid (%d)\n",
                 input->speed, s_last_speed);
