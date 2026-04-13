@@ -34,8 +34,10 @@ gcc -Wall -Wextra -pedantic -std=c99 -Iinclude -o ecu_sim src/main.c src/input.c
 ```
 ## CMake Guide
 
+```bash
 cmake -G "MinGW Makefiles" ..
 cmake --build .
+```
 
 ## Usage Guide
 
