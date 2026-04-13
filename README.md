@@ -2,7 +2,7 @@
 
 A modular, cyclic Electronic Control Unit (ECU) simulator written in C. This project simulates the core processing pipeline of a vehicle ECU, enforcing safety thresholds, processing sensor inputs, managing vehicle modes, and evaluating system states based on fault persistence.
 
-## 🏗️ System Architecture
+## System Architecture
 
 The simulator is built using a strict modular architecture, mimicking embedded system standards. The processing pipeline runs cyclically in `main.c`, stepping through the following modules:
 
@@ -13,7 +13,7 @@ The simulator is built using a strict modular architecture, mimicking embedded s
 5. **`state`**: The supreme safety evaluator. Escalates the overall vehicle state (`NORMAL` → `DEGRADED` → `SAFE`) based on accumulated fault counts.
 6. **`log`**: Formats and prints a detailed diagnostic summary at the end of every cycle.
 
-## 🚀 Compilation & Execution
+## Compilation & Execution
 
 This project is written cleanly in ISO C99.
 
@@ -32,8 +32,12 @@ gcc -Wall -Wextra -pedantic -std=c99 -Iinclude -o ecu_sim src/main.c src/input.c
 ```bash
 ./ecu_sim
 ```
+## CMake Guide
 
-## 🎮 Usage Guide
+cmake -G "MinGW Makefiles" ..
+cmake --build .
+
+## Usage Guide
 
 Once running, the simulator runs an infinite loop representing the ECU cycle. It will prompt you for physical inputs in the following format:
 
@@ -70,7 +74,7 @@ You must go from OFF `0` to ACC `1` before turning the ignition on `2`.
 * Try jumping from OFF immediately to IGN_ON: `0 0 0 2`
 * System blocks the transition and forces active mode into `FAULT`.
 
-## 📁 Repository Structure
+## Repository Structure
 ```text
 .
 ├── include/           # Header files exposing module APIs
