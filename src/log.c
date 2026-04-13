@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <time.h>
 
-/* Maps Mode enum values to human-readable strings */
 static const char *mode_to_string(Mode m)
 {
     switch (m)
@@ -17,7 +16,6 @@ static const char *mode_to_string(Mode m)
     }
 }
 
-/* Maps SystemState enum values to human-readable strings */
 static const char *state_to_string(SystemState s)
 {
     switch (s)
@@ -29,7 +27,6 @@ static const char *state_to_string(SystemState s)
     }
 }
 
-/* Logs individual fault flag status from a bitmask */
 static void log_fault_flags(uint16_t flags, const char *label)
 {
     printf("  %s: %d%d%d%d%d [ ", label,
@@ -67,7 +64,6 @@ static void log_fault_flags(uint16_t flags, const char *label)
     printf("]\n");
 }
 
-/* Logs individual fault flag status from a bitmask to a file */
 static void fprint_fault_flags(FILE *fp, uint16_t flags, const char *label)
 {
     if (!fp) return;
@@ -93,8 +89,6 @@ static void fprint_fault_flags(FILE *fp, uint16_t flags, const char *label)
 
     fprintf(fp, "]\n");
 }
-
-/* Prints a full cycle summary covering inputs, mode, faults, and system state */
 void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, const FaultStatus *faults)
 {
     if ((input == NULL) || (status == NULL) || (faults == NULL))
@@ -102,12 +96,9 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         printf("[LOG] ERROR: NULL pointer passed to log_cycle_summary\n");
         return;
     }
+    printf(" CYCLE SUMMARY REPORT \n");
 
-    printf("========================================\n");
-    printf("         CYCLE SUMMARY REPORT           \n");
-    printf("========================================\n");
-
-    /* ---- Input Snapshot ---- */
+    //inputs
     printf("[INPUT]\n");
     printf("  Speed       : %d km/h\n", input->speed);
     printf("  Temperature : %d C\n", input->temperature);
@@ -127,17 +118,17 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         fprintf(fin, "  Temperature : %d C\n", input->temperature);
         fprintf(fin, "  Gear        : %u\n", (unsigned int)input->gear);
         fprintf(fin, "  Requested Mode : %s\n", mode_to_string(input->mode));
-        fprintf(fin, "----------------------------------------\n");
+        fprintf(fin, "\n");
         fclose(fin);
     }
 
-    /* ---- Mode Status ---- */
+   //mode status
     printf("[MODE]\n");
     printf("  Active Mode   : %s\n", mode_to_string(status->active_mode));
     printf("  Current Mode  : %s\n", mode_to_string(status->current_mode));
     printf("  Previous Mode : %s\n", mode_to_string(status->previous_mode));
 
-    /* ---- Fault Status ---- */
+    //fault status
     printf("[FAULTS]\n");
     log_fault_flags(faults->current_cycle_flags, "Cycle Flags ");
     log_fault_flags(faults->persistent_flags,    "Persistent  ");
@@ -161,24 +152,22 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         fprintf(ffault, "  Warnings        : %u\n", (unsigned int)faults->warning_count);
         fprintf(ffault, "  Critical Faults : %u\n", (unsigned int)faults->critical_fault_count);
         fprintf(ffault, "  Reset Requested : %s\n", faults->reset_requested ? "YES" : "NO");
-        fprintf(ffault, "----------------------------------------\n");
+        fprintf(ffault, "\n");
         fclose(ffault);
     }
 
-    /* ---- System State ---- */
+    //system state
     printf("[STATE]\n");
     printf("  System State : %s\n", state_to_string(status->system_state));
     
-    /* ---- Active Faults in Priority Order ---- */
+    //active faults in priority order
     printf("[ACTIVE FAULTS - Priority Order]\n");
     
-    /* Priority 1: Critical Overheat */
     if (faults->current_cycle_flags & FAULT_BIT_CRITICAL_OVERHEAT)
     {
         printf("  1. CRITICAL_OVERHEAT\n");
     }
     
-    /* Priority 2: Invalid Mode / Invalid Gear */
     if (faults->current_cycle_flags & FAULT_BIT_INVALID_MODE)
     {
         printf("  2. INVALID_MODE\n");
@@ -187,14 +176,12 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
     {
         printf("  2. INVALID_GEAR\n");
     }
-    
-    /* Priority 3: Overspeed */
+
     if (faults->current_cycle_flags & FAULT_BIT_OVERSPEED)
     {
         printf("  3. OVERSPEED\n");
     }
-    
-    /* Other faults */
+
     if (faults->current_cycle_flags & FAULT_BIT_HIGH_TEMP)
     {
         printf("  4. HIGH_TEMP\n");
@@ -205,5 +192,5 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         printf("  (none)\n");
     }
 
-    printf("========================================\n\n");
+    printf("\n\n");
 }

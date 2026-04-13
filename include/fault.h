@@ -3,11 +3,9 @@
 
 #include "types.h"
 
-/* MISRA-C: Magic numbers replaced with defined constants */
-/* The number of consecutive cycles required to mark a fault as persistent (Test Case 8) */
 #define FAULT_PERSISTENCE_THRESHOLD (3U)
 
-/* The total number of fault bits currently defined in the system (Bits 0 to 4) */
+//total number of fault bits
 #define FAULT_MAX_TRACKED_BITS      (5U)
 #define FAULT_BIT_WARNING_TEMP (1U << 5)
 #define FAULT_BIT_WARNING_SPEED (1U << 6)

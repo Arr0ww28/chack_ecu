@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-/* Prints a full cycle summary covering inputs, mode, faults, and system state */
+//full log cycle summary prints
 void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, const FaultStatus *faults);
 
-#endif /* LOG_H */
+#endif 

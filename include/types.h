@@ -33,9 +33,9 @@ typedef struct
     uint8_t warning_count;
     uint8_t critical_fault_count;
     uint8_t reset_requested;
-    uint16_t current_cycle_flags; /* Bits set during the current cycle */
-    uint16_t persistent_flags;    /* Latched faults */
-    uint8_t  counters[16];        /* Fault persistence tracking */
+    uint16_t current_cycle_flags; 
+    uint16_t persistent_flags;   
+    uint8_t  counters[5];        
 } FaultStatus;
 
 typedef enum {
@@ -51,10 +51,10 @@ SystemState system_state;
     Mode active_mode;
     Mode current_mode;
     Mode previous_mode;
-    FaultPriority highest_priority_issue; /* Used for priority reporting */
+    FaultPriority highest_priority_issue; 
 } VehicleStatus;
 
-/* Fault Bits for Bitwise flags */
+//fault bits
 #define FAULT_BIT_OVERSPEED         (1U << 0)
 #define FAULT_BIT_CRITICAL_OVERHEAT (1U << 1)
 #define FAULT_BIT_HIGH_TEMP         (1U << 2)

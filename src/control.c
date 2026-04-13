@@ -16,7 +16,7 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
                                      FAULT_BIT_CRITICAL_OVERHEAT | 
                                      FAULT_BIT_HIGH_TEMP);
 
-    /* 1. Evaluate Temperature */
+    //Temp
     if (input->temperature > CONTROL_TEMP_CRITICAL_THRESHOLD)
     {
         faults->current_cycle_flags |= FAULT_BIT_CRITICAL_OVERHEAT;
@@ -33,7 +33,7 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
         faults->current_cycle_flags |= FAULT_BIT_WARNING_TEMP;
         faults->warning_count++;
     }
-    /* 2. Evaluate Overspeed */
+    //Overspeed
     if (input->speed > CONTROL_OVERSPEED_THRESHOLD)
     {
         faults->current_cycle_flags |= FAULT_BIT_OVERSPEED;
@@ -45,13 +45,7 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
         faults->warning_count++;
     }
 
-    /* * ---------------------------------------------------------
-     * PRIORITY HANDLING (As required by Hackathon Guidelines)
-     * ---------------------------------------------------------
-     * If multiple issues occur, we determine the highest priority
-     * for reporting/logging purposes.
-     */
-    
+    //Priority handling
     if ((faults->current_cycle_flags & FAULT_BIT_CRITICAL_OVERHEAT) != 0U)
     {
         status->highest_priority_issue = PRIORITY_CRITICAL_OVERHEAT;
