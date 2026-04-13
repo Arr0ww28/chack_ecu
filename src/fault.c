@@ -14,7 +14,7 @@ void fault_init(FaultStatus *faults)
     faults->current_cycle_flags = 0U;
     faults->persistent_flags    = 0U;
 
-    for (uint8_t i = 0U; i < 16U; i++)
+    for (uint8_t i = 0U; i < 5U; i++)
     {
         faults->counters[i] = 0U;
     }
