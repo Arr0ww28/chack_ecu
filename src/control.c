@@ -55,6 +55,7 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
              ((faults->current_cycle_flags & FAULT_BIT_INVALID_MODE) != 0U))
     {
         status->highest_priority_issue = PRIORITY_INVALID_GEAR_MODE;
+        faults->major_fault_count++;
     }
     else if ((faults->current_cycle_flags & FAULT_BIT_OVERSPEED) != 0U)
     {
