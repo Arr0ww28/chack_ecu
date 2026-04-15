@@ -3,6 +3,9 @@
 #include "fault.h"
 
 #include <stdio.h>
+#include <string.h>
+
+#define INPUT_LINE_BUF 256
 
 static uint16_t s_last_speed = 0;
 static int16_t s_last_temp  = 0;
@@ -18,28 +21,43 @@ void read_inputs(VehicleInput *input)
         return;
     }
 
-    int speed = 0, temp = 0, gear = 0, mode = 0;
-    
-    printf("\n[Input] Enter Speed, Temp, Gear, Mode (0=OFF, 1=ACC, 2=IGN_ON, 3=FAULT): ");
-    
-    if (scanf("%d %d %d %d", &speed, &temp, &gear, &mode) == 4)
+    char line[INPUT_LINE_BUF];
+    int speed = 0, temp = 0, gear = 0, mode = 0, extra = 0;
+
+    while (1)
     {
-        input->speed       = (uint16_t)speed;
-        input->temperature = (int16_t)temp;
-        input->gear        = (uint8_t)gear;
-        input->mode        = (Mode)mode;
-    }
-    else
-    {
-        fprintf(stderr, "[INPUT] Failed to read inputs, defaulting to 0 / MODE_OFF\n");
-        // Clear stdin buffer in case of bad input (to avoid infinite loop of fails)
-        int c;
-        while ((c = getchar()) != '\n' && c != EOF) {}
-        
-        input->speed       = 0;
-        input->temperature = 0;
-        input->gear        = 0;
-        input->mode        = MODE_OFF;
+        printf("\n[Input] Enter Speed, Temp, Gear, Mode (0=OFF, 1=ACC, 2=IGN_ON, 3=FAULT): ");
+        fflush(stdout);
+
+        if (fgets(line, sizeof(line), stdin) == NULL)
+        {
+            fprintf(stderr, "[INPUT] EOF on stdin, defaulting to 0 / MODE_OFF\n");
+            input->speed       = 0;
+            input->temperature = 0;
+            input->gear        = 0;
+            input->mode        = MODE_OFF;
+            return;
+        }
+
+        int parsed = sscanf(line, "%d %d %d %d %d", &speed, &temp, &gear, &mode, &extra);
+
+        if (parsed == 4)
+        {
+            // Exactly 4 valid inputs — accept
+            input->speed       = (uint16_t)speed;
+            input->temperature = (int16_t)temp;
+            input->gear        = (uint8_t)gear;
+            input->mode        = (Mode)mode;
+            return;
+        }
+        else if (parsed > 4)
+        {
+            fprintf(stderr, "[INPUT] Too many inputs (expected 4). Try again.\n");
+        }
+        else
+        {
+            fprintf(stderr, "[INPUT] Invalid input (expected 4). Try again.\n");
+        }
     }
 }
 
