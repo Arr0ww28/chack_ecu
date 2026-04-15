@@ -159,8 +159,12 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
     //system state
     printf("[STATE]\n");
     printf("  System State : %s\n", state_to_string(status->system_state));
-    
+    printf("[WARNINGS]\n");
     //active faults in priority order
+    if (faults->current_cycle_flags & FAULT_BIT_HIGH_TEMP)
+    {
+        printf("  WARNING: HIGH TEMP\n");
+    }
     printf("[ACTIVE FAULTS - Priority Order]\n");
     
     if (faults->current_cycle_flags & FAULT_BIT_CRITICAL_OVERHEAT)
@@ -182,10 +186,7 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         printf("  3. OVERSPEED\n");
     }
 
-    if (faults->current_cycle_flags & FAULT_BIT_HIGH_TEMP)
-    {
-        printf("  4. HIGH_TEMP\n");
-    }
+
     
     if ((faults->current_cycle_flags & 0x0FFF) == 0U)
     {

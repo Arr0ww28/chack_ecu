@@ -7,10 +7,21 @@
 
 static SystemState s_current_state = NORMAL;
 
+static const char *state_to_str(SystemState s)
+{
+    switch (s)
+    {
+        case NORMAL:   return "NORMAL";
+        case DEGRADED: return "DEGRADED";
+        case SAFE:     return "SAFE";
+        default:       return "UNKNOWN";
+    }
+}
+
 static void log_transition(SystemState from, SystemState to, const char *reason)
 {
-    fprintf(stderr, "[STATE] Transition %d -> %d : %s\n",
-            (int)from, (int)to, reason);
+    fprintf(stderr, "[STATE] Transition %s -> %s : %s\n",
+            state_to_str(from), state_to_str(to), reason);
 }
 
 //Initialise all system modules; seed status and faults with safe defaults
@@ -58,17 +69,40 @@ void evaluate_system_state(VehicleStatus *status, FaultStatus *faults)
             if (faults->critical_fault_count >= STATE_CRITICAL_FAULT_THRESHOLD)
             {
                 next_state = SAFE;
-                log_transition(s_current_state, next_state,
-                               "critical fault threshold reached");
+                char reason[128];
+                snprintf(reason, sizeof(reason), "Critical fault threshold reached (%u >= %u)",
+                         (unsigned int)faults->critical_fault_count, (unsigned int)STATE_CRITICAL_FAULT_THRESHOLD);
+                log_transition(s_current_state, next_state, reason);
                 s_current_state      = next_state;
                 status->system_state = next_state;
             }
-            else if (faults->major_fault_count >= STATE_MAJOR_FAULT_THRESHOLD || faults->warning_count >= STATE_WARNING_REPEAT_THRESHOLD ||
-                    faults->critical_fault_count>= 1)
+            else if (faults->major_fault_count >= STATE_MAJOR_FAULT_THRESHOLD)
             {
                 next_state = DEGRADED;
-                log_transition(s_current_state, next_state,
-                               "major fault or repeated warnings");
+                char reason[128];
+                snprintf(reason, sizeof(reason), "Major fault threshold reached (%u >= %u)",
+                         (unsigned int)faults->major_fault_count, (unsigned int)STATE_MAJOR_FAULT_THRESHOLD);
+                log_transition(s_current_state, next_state, reason);
+                s_current_state      = next_state;
+                status->system_state = next_state;
+            }
+            else if (faults->warning_count >= STATE_WARNING_REPEAT_THRESHOLD)
+            {
+                next_state = DEGRADED;
+                char reason[128];
+                snprintf(reason, sizeof(reason), "Warning repeat threshold reached (%u >= %u)",
+                         (unsigned int)faults->warning_count, (unsigned int)STATE_WARNING_REPEAT_THRESHOLD);
+                log_transition(s_current_state, next_state, reason);
+                s_current_state      = next_state;
+                status->system_state = next_state;
+            }
+            else if (faults->critical_fault_count >= 1)
+            {
+                next_state = DEGRADED;
+                char reason[128];
+                snprintf(reason, sizeof(reason), "Critical fault detected (%u >= 1)",
+                         (unsigned int)faults->critical_fault_count);
+                log_transition(s_current_state, next_state, reason);
                 s_current_state      = next_state;
                 status->system_state = next_state;
             }
@@ -82,8 +116,10 @@ void evaluate_system_state(VehicleStatus *status, FaultStatus *faults)
             if (faults->critical_fault_count >= STATE_CRITICAL_FAULT_THRESHOLD)
             {
                 next_state = SAFE;
-                log_transition(s_current_state, next_state,
-                               "critical fault count escalated from DEGRADED");
+                char reason[128];
+                snprintf(reason, sizeof(reason), "Critical fault count escalated from DEGRADED (%u >= %u)",
+                         (unsigned int)faults->critical_fault_count, (unsigned int)STATE_CRITICAL_FAULT_THRESHOLD);
+                log_transition(s_current_state, next_state, reason);
                 s_current_state      = next_state;
                 status->system_state = next_state;
             }
