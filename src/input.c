@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 
-//private state — one variable per validated signal
 static uint16_t s_last_speed = 0;
 static int16_t s_last_temp  = 0;
 static uint8_t s_last_gear  = 0;
@@ -81,7 +80,6 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status, FaultStatus *fa
         s_last_temp = input->temperature;
     }
 
-    //gear validation — SET FAULT BIT BEFORE CORRECTING
     if (input->gear > INPUT_GEAR_MAX)
     {
         faults->current_cycle_flags |= FAULT_BIT_INVALID_GEAR;
@@ -94,7 +92,6 @@ void validate_inputs(VehicleInput *input, VehicleStatus *status, FaultStatus *fa
         s_last_gear = input->gear;
     }
 
-    //mode validation — SET FAULT BIT BEFORE CORRECTING
     if (input->mode >= MODE_INVALID)
     {
         faults->current_cycle_flags |= FAULT_BIT_INVALID_MODE;

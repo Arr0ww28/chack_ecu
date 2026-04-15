@@ -36,6 +36,10 @@ gcc -Wall -Wextra -pedantic -std=c99 -Iinclude -o ecu_sim src/main.c src/input.c
 
 ```bash
 cmake -G "MinGW Makefiles" ..
+
+if it fails, run this first:
+Remove-Item -Recurse -Force CMakeCache.txt, CMakeFiles
+
 cmake --build .
 ```
 

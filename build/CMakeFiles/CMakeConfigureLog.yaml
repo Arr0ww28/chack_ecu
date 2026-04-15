@@ -28,6 +28,7 @@ events:
       - "mingw32-make.exe"
     candidate_directories:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -52,6 +53,8 @@ events:
     searched_directories:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/mingw32-make.exe.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/mingw32-make.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mingw32-make.exe.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mingw32-make.exe"
       - "C:/Windows/System32/mingw32-make.exe.com"
       - "C:/Windows/System32/mingw32-make.exe"
       - "C:/Windows/mingw32-make.exe.com"
@@ -87,6 +90,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -131,6 +135,7 @@ events:
       - "clang"
     candidate_directories:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -170,6 +175,27 @@ events:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/clang.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/clang.exe"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/clang"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cl.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cl.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/cl"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/bcc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/bcc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/bcc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/xlc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/xlc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/xlc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/icx.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/icx.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/icx"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/clang.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/clang.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/clang"
       - "C:/Windows/System32/cc.com"
       - "C:/Windows/System32/cc.exe"
       - "C:/Windows/System32/cc"
@@ -490,6 +516,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -535,6 +562,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -596,6 +624,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -618,6 +647,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -657,6 +687,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -679,6 +710,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -718,6 +750,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -740,6 +773,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -779,6 +813,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -801,6 +836,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -840,6 +876,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -862,6 +899,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -901,6 +939,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -923,6 +962,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -962,6 +1002,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -984,6 +1025,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -1023,6 +1065,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1045,6 +1088,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -1084,6 +1128,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1106,6 +1151,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -1145,6 +1191,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1167,6 +1214,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -1206,6 +1254,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1229,6 +1278,9 @@ events:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/tapi.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/tapi.exe"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/tapi"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/tapi.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/tapi.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/tapi"
       - "C:/Windows/System32/tapi.com"
       - "C:/Windows/System32/tapi.exe"
       - "C:/Windows/System32/tapi"
@@ -1281,6 +1333,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -1323,6 +1376,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1346,6 +1400,9 @@ events:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ar-15.2.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ar-15.2.exe"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ar-15.2"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ar-15.2.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ar-15.2.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ar-15.2"
       - "C:/Windows/System32/gcc-ar-15.2.com"
       - "C:/Windows/System32/gcc-ar-15.2.exe"
       - "C:/Windows/System32/gcc-ar-15.2"
@@ -1400,6 +1457,9 @@ events:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ar-15.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ar-15.exe"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ar-15"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ar-15.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ar-15.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ar-15"
       - "C:/Windows/System32/gcc-ar-15.com"
       - "C:/Windows/System32/gcc-ar-15.exe"
       - "C:/Windows/System32/gcc-ar-15"
@@ -1454,6 +1514,9 @@ events:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ar15.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ar15.exe"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ar15"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ar15.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ar15.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ar15"
       - "C:/Windows/System32/gcc-ar15.com"
       - "C:/Windows/System32/gcc-ar15.exe"
       - "C:/Windows/System32/gcc-ar15"
@@ -1507,6 +1570,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -1549,6 +1613,7 @@ events:
     candidate_directories:
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1572,6 +1637,9 @@ events:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib-15.2.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib-15.2.exe"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib-15.2"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ranlib-15.2.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ranlib-15.2.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ranlib-15.2"
       - "C:/Windows/System32/gcc-ranlib-15.2.com"
       - "C:/Windows/System32/gcc-ranlib-15.2.exe"
       - "C:/Windows/System32/gcc-ranlib-15.2"
@@ -1626,6 +1694,9 @@ events:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib-15.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib-15.exe"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib-15"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ranlib-15.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ranlib-15.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ranlib-15"
       - "C:/Windows/System32/gcc-ranlib-15.com"
       - "C:/Windows/System32/gcc-ranlib-15.exe"
       - "C:/Windows/System32/gcc-ranlib-15"
@@ -1680,6 +1751,9 @@ events:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib15.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib15.exe"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib15"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ranlib15.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ranlib15.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/gcc-ranlib15"
       - "C:/Windows/System32/gcc-ranlib15.com"
       - "C:/Windows/System32/gcc-ranlib15.exe"
       - "C:/Windows/System32/gcc-ranlib15"
@@ -1733,6 +1807,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -1774,6 +1849,7 @@ events:
       - "windres"
     candidate_directories:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1807,6 +1883,9 @@ events:
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/windres.com"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/windres.exe"
       - "C:/Users/hreddy2/AppData/Local/Programs/Microsoft VS Code/windres"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/windres.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/windres.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/windres"
       - "C:/Windows/System32/windres.com"
       - "C:/Windows/System32/windres.exe"
       - "C:/Windows/System32/windres"
@@ -1857,6 +1936,7 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\Users\\hreddy2\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
         - "C:\\Windows\\System32\\Wbem"
@@ -1889,8 +1969,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-lh274f"
-      binary: "C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-lh274f"
+      source: "C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-zmtjg6"
+      binary: "C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-zmtjg6"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1899,13 +1979,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-lh274f'
+        Change Dir: 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-zmtjg6'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_f5cd0/fast
-        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f5cd0.dir\\build.make CMakeFiles/cmTC_f5cd0.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-lh274f'
-        Building C object CMakeFiles/cmTC_f5cd0.dir/CMakeCCompilerABI.c.obj
-        C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c"
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_0d494/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_0d494.dir\\build.make CMakeFiles/cmTC_0d494.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-zmtjg6'
+        Building C object CMakeFiles/cmTC_0d494.dir/CMakeCCompilerABI.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c"
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
         Target: x86_64-w64-mingw32
@@ -1913,8 +1993,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (Rev8, Built by MSYS2 project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_f5cd0.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_f5cd0.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccn1oe2G.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_0d494.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_0d494.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccM1VZie.s
         GNU C23 (Rev8, Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1933,14 +2013,14 @@ events:
          C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed
         End of search list.
         Compiler executable checksum: f68563dd6aebdc6b84233a210e98d3c3
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_f5cd0.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccn1oe2G.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_0d494.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccM1VZie.s
         GNU assembler version 2.45 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.'
-        Linking C executable cmTC_f5cd0.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_f5cd0.dir\\link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.'
+        Linking C executable cmTC_0d494.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_0d494.dir\\link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
         COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe
@@ -1951,16 +2031,16 @@ events:
         gcc version 15.2.0 (Rev8, Built by MSYS2 project) 
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5cd0.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_f5cd0.'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\cc2bqVIQ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_f5cd0.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_f5cd0.dir/objects.a --no-whole-archive --out-implib libcmTC_f5cd0.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0d494.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_0d494.'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccSBcYze.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_0d494.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_0d494.dir/objects.a --no-whole-archive --out-implib libcmTC_0d494.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         collect2 version 15.2.0
-        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\cc2bqVIQ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_f5cd0.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_f5cd0.dir/objects.a --no-whole-archive --out-implib libcmTC_f5cd0.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
+        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccSBcYze.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_0d494.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_0d494.dir/objects.a --no-whole-archive --out-implib libcmTC_0d494.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o
         GNU ld (GNU Binutils) 2.45
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5cd0.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_f5cd0.'
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_f5cd0.dir/objects.a
-        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_f5cd0.dir/objects.a @CMakeFiles\\cmTC_f5cd0.dir\\objects1.rsp
-        C:\\msys64\\ucrt64\\bin\\cc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_f5cd0.dir/objects.a -Wl,--no-whole-archive -o cmTC_f5cd0.exe -Wl,--out-implib,libcmTC_f5cd0.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        mingw32-make[1]: Leaving directory 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-lh274f'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0d494.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_0d494.'
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_0d494.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_0d494.dir/objects.a @CMakeFiles\\cmTC_0d494.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_0d494.dir/objects.a -Wl,--no-whole-archive -o cmTC_0d494.exe -Wl,--out-implib,libcmTC_0d494.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        mingw32-make[1]: Leaving directory 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-zmtjg6'
         
       exitCode: 0
   -
@@ -1993,13 +2073,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-lh274f']
+        ignore line: [Change Dir: 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-zmtjg6']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_f5cd0/fast]
-        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f5cd0.dir\\build.make CMakeFiles/cmTC_f5cd0.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-lh274f']
-        ignore line: [Building C object CMakeFiles/cmTC_f5cd0.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_0d494/fast]
+        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_0d494.dir\\build.make CMakeFiles/cmTC_0d494.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/hreddy2/OneDrive - Visteon/Desktop/C Hackathon/chack_ecu/build/CMakeFiles/CMakeScratch/TryCompile-zmtjg6']
+        ignore line: [Building C object CMakeFiles/cmTC_0d494.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -2007,8 +2087,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (Rev8  Built by MSYS2 project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_f5cd0.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_f5cd0.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccn1oe2G.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_0d494.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_0d494.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccM1VZie.s]
         ignore line: [GNU C23 (Rev8  Built by MSYS2 project) version 15.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -2027,8 +2107,8 @@ events:
         ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/include-fixed]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: f68563dd6aebdc6b84233a210e98d3c3]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_f5cd0.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccn1oe2G.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_0d494.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccM1VZie.s]
         ignore line: [GNU assembler version 2.45 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.45]
         ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
@@ -2039,9 +2119,9 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_f5cd0.dir\\CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_f5cd0.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_f5cd0.dir\\link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_0d494.dir\\CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_0d494.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_0d494.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe]
@@ -2059,13 +2139,13 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5cd0.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_f5cd0.']
-        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\cc2bqVIQ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_f5cd0.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_f5cd0.dir/objects.a --no-whole-archive --out-implib libcmTC_f5cd0.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0d494.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_0d494.']
+        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccSBcYze.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_0d494.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_0d494.dir/objects.a --no-whole-archive --out-implib libcmTC_0d494.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\cc2bqVIQ.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccSBcYze.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -2087,7 +2167,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_f5cd0.exe] ==> ignore
+          arg [cmTC_0d494.exe] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o]
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0]
@@ -2098,10 +2178,10 @@ events:
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../..]
           arg [-v] ==> ignore
           arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_f5cd0.dir/objects.a] ==> ignore
+          arg [CMakeFiles\\cmTC_0d494.dir/objects.a] ==> ignore
           arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_f5cd0.dll.a] ==> ignore
+          arg [libcmTC_0d494.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -2126,7 +2206,7 @@ events:
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
         ignore line: [collect2 version 15.2.0]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\cc2bqVIQ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_f5cd0.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_f5cd0.dir/objects.a --no-whole-archive --out-implib libcmTC_f5cd0.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\hreddy2\\AppData\\Local\\Temp\\ccSBcYze.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_0d494.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_0d494.dir/objects.a --no-whole-archive --out-implib libcmTC_0d494.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/15.2.0/crtend.o]
         linker tool for 'C': C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe
         remove lib [gcc_eh]
         remove lib [msvcrt]
