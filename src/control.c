@@ -37,11 +37,11 @@ void run_control_checks(const VehicleInput *input, VehicleStatus *status, FaultS
         faults->current_cycle_flags |= FAULT_BIT_OVERSPEED;
         faults->major_fault_count++;
     }
-    else if (input->speed >= CONTROL_WARNING_SPEED)
-    {
-        faults->current_cycle_flags |= FAULT_BIT_WARNING_SPEED;
-        faults->warning_count++;
-    }
+    //else if (input->speed >= CONTROL_WARNING_SPEED)
+    //{
+    //    faults->current_cycle_flags |= FAULT_BIT_WARNING_SPEED;
+    //    faults->warning_count++;
+    //}
 
     //Priority handling
     if ((faults->current_cycle_flags & FAULT_BIT_CRITICAL_OVERHEAT) != 0U)

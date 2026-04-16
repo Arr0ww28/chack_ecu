@@ -7,8 +7,7 @@
 
 //total number of fault bits
 #define FAULT_MAX_TRACKED_BITS      (5U)
-#define FAULT_BIT_WARNING_TEMP (1U << 5)
-#define FAULT_BIT_WARNING_SPEED (1U << 6)
+
 
 /**
  * @brief Initializes the fault status structure and clears all counters.
