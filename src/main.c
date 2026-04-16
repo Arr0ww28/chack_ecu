@@ -16,7 +16,7 @@ int main(void)
 
     uint8_t safe_mode_cycle_count = 0;
 
-    printf("   VEHICLE ECU SIMULATOR      \n");
+    printf("---  VEHICLE ECU SIMULATOR  ---\n");
 
     init_system(&status, &faults);
     printf("[MAIN] System initialisation complete.\n\n");

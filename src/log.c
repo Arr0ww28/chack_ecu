@@ -38,27 +38,27 @@ static void log_fault_flags(uint16_t flags, const char *label)
 
     if (flags & FAULT_BIT_OVERSPEED)
     {
-        printf("OVERSPEED ");
+        printf(ANSI_COLOR_RED "OVERSPEED " ANSI_COLOR_RESET);
     }
     if (flags & FAULT_BIT_CRITICAL_OVERHEAT)
     {
-        printf("CRITICAL_OVERHEAT ");
+        printf(ANSI_COLOR_RED "CRITICAL_OVERHEAT " ANSI_COLOR_RESET);
     }
     if (flags & FAULT_BIT_HIGH_TEMP)
     {
-        printf("HIGH_TEMP ");
+        printf(ANSI_COLOR_YELLOW "HIGH_TEMP " ANSI_COLOR_RESET);
     }
     if (flags & FAULT_BIT_INVALID_GEAR)
     {
-        printf("INVALID_GEAR ");
+        printf(ANSI_COLOR_YELLOW "INVALID_GEAR " ANSI_COLOR_RESET);
     }
     if (flags & FAULT_BIT_INVALID_MODE)
     {
-        printf("INVALID_MODE ");
+        printf(ANSI_COLOR_YELLOW "INVALID_MODE " ANSI_COLOR_RESET);
     }
     if (flags == 0U)
     {
-        printf("CLEAR ");
+        printf(ANSI_COLOR_GREEN "CLEAR " ANSI_COLOR_RESET);
     }
 
     printf("]\n");
@@ -96,14 +96,16 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         printf("[LOG] ERROR: NULL pointer passed to log_cycle_summary\n");
         return;
     }
-    printf(" CYCLE SUMMARY REPORT \n");
+    printf("\n\033[2J\033[H"); // Clear screen and move to top
+    printf(ANSI_COLOR_CYAN "---- CYCLE SUMMARY REPORT ---" ANSI_COLOR_RESET "\n");
+    printf("\n");
 
     //inputs
-    printf("[INPUT]\n");
+    printf(ANSI_COLOR_BLUE "[INPUT]" ANSI_COLOR_RESET "\n");
     printf("  Speed       : %d km/h\n", input->speed);
     printf("  Temperature : %d C\n", input->temperature);
     printf("  Gear        : %u\n", (unsigned int)input->gear);
-    printf("  Requested Mode : %s\n", mode_to_string(input->mode));
+    printf("  Req. Mode   : %s\n", mode_to_string(input->mode));
 
     FILE *fin = fopen("valid_input.txt", "a");
     if (fin)
@@ -121,22 +123,25 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         fprintf(fin, "\n");
         fclose(fin);
     }
-
-   //mode status
-    printf("[MODE]\n");
+    printf("\n");
+    
+    //mode status
+    printf(ANSI_COLOR_BLUE "[MODE]" ANSI_COLOR_RESET "\n");
     printf("  Active Mode   : %s\n", mode_to_string(status->active_mode));
     printf("  Current Mode  : %s\n", mode_to_string(status->current_mode));
     printf("  Previous Mode : %s\n", mode_to_string(status->previous_mode));
 
+    printf("\n");
     //fault status
-    printf("[FAULTS]\n");
+    printf(ANSI_COLOR_BLUE "[FAULTS]" ANSI_COLOR_RESET "\n");
     log_fault_flags(faults->current_cycle_flags, "Cycle Flags ");
     log_fault_flags(faults->persistent_flags,    "Persistent  ");
     printf("  Major Faults    : %u\n", (unsigned int)faults->major_fault_count);
     printf("  Warnings        : %u\n", (unsigned int)faults->warning_count);
     printf("  Critical Faults : %u\n", (unsigned int)faults->critical_fault_count);
-    printf("  Reset Requested : %s\n", faults->reset_requested ? "YES" : "NO");
+    printf("  Reset Requested : %s\n", faults->reset_requested ? (ANSI_COLOR_RED "YES" ANSI_COLOR_RESET) : (ANSI_COLOR_GREEN "NO" ANSI_COLOR_RESET));
 
+    printf("\n");
     FILE *ffault = fopen("faults_errors.txt", "a");
     if (ffault)
     {
@@ -144,7 +149,7 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         struct tm *tm_info = localtime(&t);
         char time_buf[64];
         strftime(time_buf, sizeof(time_buf), "%Y-%m-%d %H:%M:%S", tm_info);
-
+        
         fprintf(ffault, "[FAULTS] - %s\n", time_buf);
         fprint_fault_flags(ffault, faults->current_cycle_flags, "Cycle Flags ");
         fprint_fault_flags(ffault, faults->persistent_flags,    "Persistent  ");
@@ -155,42 +160,49 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         fprintf(ffault, "\n");
         fclose(ffault);
     }
-
+    printf("\n");
+    
     //system state
-    printf("[STATE]\n");
-    printf("  System State : %s\n", state_to_string(status->system_state));
-    printf("[WARNINGS]\n");
+    printf(ANSI_COLOR_BLUE "[STATE]" ANSI_COLOR_RESET "\n");
+    if (status->system_state == NORMAL) {
+        printf("  System State : " ANSI_COLOR_GREEN "%s" ANSI_COLOR_RESET "\n", state_to_string(status->system_state));
+    } else {
+        printf("  System State : " ANSI_COLOR_RED "%s" ANSI_COLOR_RESET "\n", state_to_string(status->system_state));
+    }
+    printf("\n");
+    printf(ANSI_COLOR_YELLOW "[WARNINGS]" ANSI_COLOR_RESET "\n");
     //active faults in priority order
     if (faults->current_cycle_flags & FAULT_BIT_HIGH_TEMP)
     {
-        printf("  WARNING: HIGH TEMP\n");
+        printf(ANSI_COLOR_YELLOW "  WARNING: HIGH TEMP\n" ANSI_COLOR_RESET);
     }
-    printf("[ACTIVE FAULTS - Priority Order]\n");
+    printf("\n");
+    printf(ANSI_COLOR_RED "[ACTIVE FAULTS - Priority Order]" ANSI_COLOR_RESET "\n");
     
     if (faults->current_cycle_flags & FAULT_BIT_CRITICAL_OVERHEAT)
     {
-        printf("  1. CRITICAL_OVERHEAT\n");
+        printf(ANSI_COLOR_RED "  1. CRITICAL_OVERHEAT\n" ANSI_COLOR_RESET);
     }
     
     if (faults->current_cycle_flags & FAULT_BIT_INVALID_MODE)
     {
-        printf("  2. INVALID_MODE\n");
+        printf(ANSI_COLOR_YELLOW "  2. INVALID_MODE\n" ANSI_COLOR_RESET);
     }
     if (faults->current_cycle_flags & FAULT_BIT_INVALID_GEAR)
     {
-        printf("  2. INVALID_GEAR\n");
+        printf(ANSI_COLOR_YELLOW "  2. INVALID_GEAR\n" ANSI_COLOR_RESET);
     }
 
     if (faults->current_cycle_flags & FAULT_BIT_OVERSPEED)
     {
-        printf("  3. OVERSPEED\n");
+        printf(ANSI_COLOR_RED "  3. OVERSPEED\n" ANSI_COLOR_RESET);
     }
 
 
     
     if ((faults->current_cycle_flags & 0x0FFF) == 0U)
     {
-        printf("  (none)\n");
+        printf(ANSI_COLOR_GREEN "  (none)\n" ANSI_COLOR_RESET);
     }
 
     printf("\n\n");
