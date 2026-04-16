@@ -97,11 +97,12 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
         return;
     }
     printf("\n\033[2J\033[H"); // Clear screen and move to top
+    printf("\n");
     printf(ANSI_COLOR_CYAN "---- CYCLE SUMMARY REPORT ---" ANSI_COLOR_RESET "\n");
     printf("\n");
 
     //inputs
-    printf(ANSI_COLOR_BLUE "[INPUT]" ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_CYAN "[INPUT]" ANSI_COLOR_RESET "\n");
     printf("  Speed       : %d km/h\n", input->speed);
     printf("  Temperature : %d C\n", input->temperature);
     printf("  Gear        : %u\n", (unsigned int)input->gear);
@@ -126,14 +127,14 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
     printf("\n");
     
     //mode status
-    printf(ANSI_COLOR_BLUE "[MODE]" ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_CYAN "[MODE]" ANSI_COLOR_RESET "\n");
     printf("  Active Mode   : %s\n", mode_to_string(status->active_mode));
     printf("  Current Mode  : %s\n", mode_to_string(status->current_mode));
     printf("  Previous Mode : %s\n", mode_to_string(status->previous_mode));
 
     printf("\n");
     //fault status
-    printf(ANSI_COLOR_BLUE "[FAULTS]" ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_CYAN "[FAULTS]" ANSI_COLOR_RESET "\n");
     log_fault_flags(faults->current_cycle_flags, "Cycle Flags ");
     log_fault_flags(faults->persistent_flags,    "Persistent  ");
     printf("  Major Faults    : %u\n", (unsigned int)faults->major_fault_count);
@@ -163,7 +164,7 @@ void log_cycle_summary(const VehicleInput *input, const VehicleStatus *status, c
     printf("\n");
     
     //system state
-    printf(ANSI_COLOR_BLUE "[STATE]" ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_CYAN "[STATE]" ANSI_COLOR_RESET "\n");
     if (status->system_state == NORMAL) {
         printf("  System State : " ANSI_COLOR_GREEN "%s" ANSI_COLOR_RESET "\n", state_to_string(status->system_state));
     } else {

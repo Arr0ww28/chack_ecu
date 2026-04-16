@@ -67,13 +67,22 @@ int main(void)
 
         //control checks
         run_control_checks(&input, &status, &faults);
-        printf("[MAIN] Control checks done: cycle_flags=0x%04X priority=%d\n",
-               faults.current_cycle_flags, (int)status.highest_priority_issue);
+        printf("[MAIN] Control checks done: cycle_flags=%d%d%d%d%d priority=%d\n",
+               (faults.current_cycle_flags & FAULT_BIT_INVALID_MODE) ? 1 : 0,
+               (faults.current_cycle_flags & FAULT_BIT_INVALID_GEAR) ? 1 : 0,
+               (faults.current_cycle_flags & FAULT_BIT_HIGH_TEMP) ? 1 : 0,
+               (faults.current_cycle_flags & FAULT_BIT_CRITICAL_OVERHEAT) ? 1 : 0,
+               (faults.current_cycle_flags & FAULT_BIT_OVERSPEED) ? 1 : 0,
+               (int)status.highest_priority_issue);
 
         //fault status
         update_fault_status(&faults);
-        printf("[MAIN] Fault status updated: persistent=0x%04X\n",
-               faults.persistent_flags);
+        printf("[MAIN] Fault status updated: persistent=%d%d%d%d%d\n",
+               (faults.persistent_flags & FAULT_BIT_INVALID_MODE) ? 1 : 0,
+               (faults.persistent_flags & FAULT_BIT_INVALID_GEAR) ? 1 : 0,
+               (faults.persistent_flags & FAULT_BIT_HIGH_TEMP) ? 1 : 0,
+               (faults.persistent_flags & FAULT_BIT_CRITICAL_OVERHEAT) ? 1 : 0,
+               (faults.persistent_flags & FAULT_BIT_OVERSPEED) ? 1 : 0);
 
         /* Step 6: Evaluate overall system state */
         evaluate_system_state(&status, &faults);
