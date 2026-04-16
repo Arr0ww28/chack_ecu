@@ -27,7 +27,7 @@ int main(void)
 
         //read inputs
         read_inputs(&input);
-        printf("[MAIN] Inputs read: speed=%d temp=%d gear=%u mode=%d\n",
+        printf("[MAIN] Inputs read: speed=%u temp=%d gear=%u mode=%d\n",
                input.speed, input.temperature, (unsigned)input.gear, (int)input.mode);
 
         if ((input.speed == 0 && input.temperature == 0 && input.gear == 0 && input.mode == 0) || (safe_mode_cycle_count >= 2))
